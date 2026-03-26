@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Τοιχογραφιες</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles_toix.css">
+</head>
+<body>
+  <a class="back-home" href="index.html" aria-label="Αρχική σελίδα">Αρχική</a>
+
+  <main class="page">
+    <header class="toix-header" aria-hidden="true">
+      <h1 id="pageTitle">Τοιχογραφιες</h1>
+      <div class="separator" role="separator" aria-hidden="true"></div>
+
+      <nav class="categories" id="categories" aria-label="Κατηγορίες">
+        <a class="cat-item" href="?cat=parastaseis" data-cat="parastaseis">παραστασεις</a>
+        <a class="cat-item" href="?cat=figoures" data-cat="figoures">φιγουρες αγιων</a>
+        <a class="cat-item" href="?cat=bousta" data-cat="bousta">μπουστα αγιων</a>
+        <a class="cat-item" href="?cat=diakosmisi" data-cat="diakosmisi">διακοσμιση</a>
+      </nav>
+    </header>
+
+    <section id="gallery" class="gallery" aria-live="polite">
+      <!-- JS will populate images for the current category here -->
+    </section>
+  </main>
+
+  <!-- load image-data before the page script so the script can use IMAGES_DATA -->
+  <script src="../../js/images_data.js"></script>
+  <script src="../../js/script_toix.js" defer></script>
+</body>
+</html>

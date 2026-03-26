@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ολοκλήρωση Παραγγελίας</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles_form.css">
+</head>
+<body>
+  <!-- cart button top-right (same style as image preview page) -->
+  <button id="cartBtn" class="cart-button" aria-label="Καλάθι">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+      <path d="M7 4h-2l-1 2H2v2h1l2 8h11l2.5-6H9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="10" cy="20" r="1.5" fill="currentColor"></circle>
+      <circle cx="18" cy="20" r="1.5" fill="currentColor"></circle>
+    </svg>
+    <span id="cartCount" class="cart-badge" aria-hidden="true"></span>
+  </button>
+
+  <main class="form-wrapper preview-wrapper" id="formWrapper" aria-hidden="true">
+    <div class="form-grid">
+      <!-- LEFT: Steps column -->
+      <section class="steps-col" id="stepsCol" aria-label="Βήματα παραγγελίας">
+        <h1 class="page-title">Ολοκλήρωση παραγγελίας</h1>
+
+        <div class="step" data-step="1" id="step1">
+          <div class="step-head">
+            <div class="step-index">1</div>
+            <div class="step-title">Προσωπικά στοιχεία</div>
+          </div>
+          <div class="step-body">
+            <form id="personalForm" autocomplete="on">
+              <label class="form-label">Όνομα
+                <input type="text" name="firstName" id="firstName" class="text-input" />
+              </label>
+
+              <label class="form-label">Επώνυμο
+                <input type="text" name="lastName" id="lastName" class="text-input" />
+              </label>
+
+              <label class="form-label">E-mail
+                <input type="email" name="email" id="email" class="text-input" />
+              </label>
+
+              <div class="step-actions">
+                <button id="toStep2" class="primary-btn" type="button">Συνέχεια</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="step" data-step="2" id="step2">
+          <div class="step-head">
+            <div class="step-index">2</div>
+            <div class="step-title">Διεύθυνση παράδοσης</div>
+          </div>
+          <div class="step-body">
+            <form id="addressForm" autocomplete="on">
+              <!-- Removed Όνομα/Επίθετο from step 2 as requested -->
+              <label class="form-label">Διεύθυνση
+                <input type="text" name="address" id="address" class="text-input" />
+              </label>
+              <label class="form-label">Ταχυδρομικός Κώδικας
+                <input type="text" name="postcode" id="postcode" class="text-input" />
+              </label>
+              <label class="form-label">Πόλη
+                <input type="text" name="city" id="city" class="text-input" />
+              </label>
+              <label class="form-label">Χώρα
+                <select id="country" class="text-input">
+                  <option value="Greece">Ελλάδα</option>
+                </select>
+              </label>
+
+              <label class="form-label">Κινητό τηλέφωνο
+                <input type="text" name="mobile" id="mobile" class="text-input" />
+              </label>
+
+              <div class="step-actions">
+                <button id="backTo1" class="secondary-btn" type="button">Πίσω</button>
+                <button id="toStep3" class="primary-btn" type="button">Συνέχεια</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="step" data-step="3" id="step3">
+          <div class="step-head">
+            <div class="step-index">3</div>
+            <div class="step-title">Πληρωμή</div>
+          </div>
+          <div class="step-body">
+            <form id="paymentForm">
+              <fieldset class="radio-group" name="paymentMethod">
+                <legend class="form-subtitle">Επιλογή μεθόδου πληρωμής</legend>
+
+                <label class="radio-label">
+                  <input type="radio" name="payMethod" value="bank" checked />
+                  Τραπεζική μεταφορά
+                </label>
+
+                <label class="radio-label">
+                  <input type="radio" name="payMethod" value="cod" />
+                  Αντικαταβολή (πιθανή χρέωση)
+                </label>
+
+                <label class="radio-label">
+                  <input type="radio" name="payMethod" value="card" />
+                  Πληρωμή με κάρτα
+                </label>
+
+                <label class="radio-label">
+                  <input type="radio" name="payMethod" value="paypal" />
+                  PayPal — γρήγορο & ασφαλές
+                </label>
+              </fieldset>
+
+              <!-- agree to terms ONLY in step 3 -->
+              <label class="checkbox-label">
+                <input type="checkbox" id="agreeTerms" />
+                Συμφωνώ με τους όρους παροχής υπηρεσιών ( <a href="#" class="bc-link">όροι</a> )
+              </label>
+
+              <div class="step-actions">
+                <button id="backTo2" class="secondary-btn" type="button">Πίσω</button>
+                <button id="payBtn" class="primary-btn" type="button">Πληρωμή</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: Order summary -->
+      <aside class="summary-col" id="summaryCol" aria-label="Περίληψη Παραγγελίας">
+        <div class="summary-card">
+          <div class="summary-header">
+            <div class="summary-title">Περίληψη Παραγγελίας</div>
+            <div class="items-count" id="itemsCount">0 είδη</div>
+          </div>
+
+          <button id="toggleDetails" class="details-toggle">εμφάνιση λεπτομερειών ▾</button>
+          <div id="detailsWrap" class="details-wrap" hidden>
+            <ul id="detailsList" class="details-list"></ul>
+          </div>
+
+          <div class="summary-line">
+            <div>Αποστολή</div>
+            <div class="muted">Δωρεάν</div>
+          </div>
+
+          <div class="summary-line total">
+            <div>Σύνολο (συμπ. ΦΠΑ)</div>
+            <div id="totalPrice">0.00 €</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="../../js/script_form.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Καλάθι - Παραγγελία</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles_cart.css">
+</head>
+<body>
+  <header class="breadcrumb-row" aria-label="Breadcrumb">
+    <nav class="breadcrumb">
+      <a href="index.html" class="bc-link">αρχικη</a>
+      <span class="sep">&gt;</span>
+      <a href="toix.html" class="bc-link">τοιχογραφιες</a>
+      <span class="sep">&gt;</span>
+      <span class="bc-current" aria-current="page">Καλάθι</span>
+    </nav>
+  </header>
+
+  <main class="cart-wrapper" id="cartWrapper" aria-live="polite">
+    <h1 class="page-title">Το καλάθι σας</h1>
+
+    <div id="cartList" class="cart-list" aria-live="polite">
+      <!-- JS will render cart entry boxes here -->
+    </div>
+
+    <div class="cart-actions">
+      <button id="checkoutBtn" class="checkout-btn">Ολοκλήρωση παραγγελίας</button>
+    </div>
+  </main>
+
+  <script src="../../js/script_cart.js" defer></script>
+</body>
+</html>

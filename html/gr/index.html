@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Black → Dark Red Transition with Menus & Images</title>
+  <link rel="stylesheet" href="../../css/styles_index.css">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a id="langSwitch" class="lang-switch" href="" aria-label="Switch language">English</a>
+
+  <img id="leftTopImg" class="side-image" src="" alt="Left top placeholder" />
+  <img id="rightTopImg" class="side-image" src="" alt="Right top placeholder" />
+
+  <div class="wrapper">
+    <div class="grid" id="mainGrid" aria-hidden="true">
+      <nav class="menu" id="leftMenu">
+        <div class="menu-title" id="leftTitle">Έργα σε ψηφιακή μορφή</div>
+        <a class="menu-item" href="toix.html">Τοιχογραφίες</a>
+        <a class="menu-item" href="foreik.html">Φορητές εικόνες</a>
+        <a class="menu-item" href="other.html">Διάφορα - Ζωγραφική</a>
+      </nav>
+
+      <div class="center" id="centerCol">
+        <div class="center-grid">
+          <div class="vertical-placeholder" id="leftVertical" aria-hidden="true"></div>
+
+          <div class="image-wrap">
+            <img class="center-image" id="img1" src="" alt="Big Jesus" />
+            <img id="overlayImg" class="overlay-small" src="" alt="Overlay small" />
+          </div>
+
+          <div class="vertical-placeholder" id="rightVertical" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <nav class="menu" id="rightMenu">
+        <div class="menu-title" id="rightTitle">Χειροποίητες δημιουργίες</div>
+        <div class="menu-item">Σε φυσικό ξύλο</div>
+        <div class="menu-item">Σε κόντρα πλακέ θαλάσσης</div>
+        <div class="menu-item">Σε κάμποτο</div>
+      </nav>
+    </div>
+  </div>
+
+  <script src="../../js/script_index.js" defer></script>
+</body>
+</html>

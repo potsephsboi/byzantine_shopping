@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Preview - Εικόνα</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles_image_preview.css">
+</head>
+<body>
+  <header class="breadcrumb-row" aria-label="Breadcrumb">
+    <nav class="breadcrumb">
+      <a href="index.html" class="bc-link">αρχικη</a>
+      <span class="sep">&gt;</span>
+      <a href="toix.html" class="bc-link">τοιχογραφιες</a>
+      <span class="sep">&gt;</span>
+      <span class="bc-current" id="crumbId" aria-current="page">-</span>
+    </nav>
+
+    <!-- Cart button (top-right) -->
+    <a class="cart-top-btn" href="cart.html" aria-label="Καλάθι">
+      <!-- simple cart SVG -->
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M7 4h-2l-1 2h2l2 9h9l2-8H9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="11" cy="20.2" r="1" fill="currentColor"></circle>
+        <circle cx="18" cy="20.2" r="1" fill="currentColor"></circle>
+      </svg>
+      <span class="cart-badge" id="cartCount" aria-hidden="true"></span>
+    </a>
+  </header>
+
+  <main class="preview-wrapper" id="previewWrapper" aria-hidden="true">
+    <section class="preview-top">
+      <div class="main-image-card" id="mainImageCard">
+        <img id="mainPreviewImage" class="main-image" src="../../assets/pant.jpg" alt="Preview image placeholder">
+      </div>
+
+      <div class="image-title" aria-hidden="false">
+        <strong>Ονομα εικονας:</strong> <span id="imageId">-</span>
+      </div>
+
+      <form id="heightForm" class="height-form" aria-label="Επιλέξτε ύψος εικόνας">
+        <label for="heightInput" class="height-label">
+          Επιλέξτε ύψος εικόνας. Το πλάτος θα προσαρμοστεί σύμφωνα με την αναλογία της συγκεκριμένης εικόνας,
+          <span id="ratioText">-</span> (Πλάτος χ Ύψος)
+        </label>
+
+        <div class="height-row">
+          <input id="heightInput" type="number" inputmode="numeric" min="1" step="1" value="20" aria-describedby="heightHelp" />
+          <span class="unit">cm</span>
+          <button id="selectBtn" type="submit" class="select-btn">Επιλογή</button>
+        </div>
+
+        <div class="minmax-row">
+          <small>Εύρος ύψους: <span id="minMaxText">-</span></small>
+        </div>
+      </form>
+
+      <div class="selected-dims-row">
+        <span class="dims-label">Επιλεγμένες διαστάσεις:</span>
+        <span id="selectedDims">-</span>
+      </div>
+
+      <div class="print-options-row" role="radiogroup" aria-label="Μέθοδος εκτύπωσης">
+        <button class="print-btn" data-method="paper" aria-pressed="true">Εκτύπωση σε χαρτί υψηλής ποιότητας</button>
+        <button class="print-btn" data-method="canvas" aria-pressed="false">Εκτύπωση σε μουσαμά υψηλής ποιότητας</button>
+        <button class="print-btn" data-method="silk" aria-pressed="false">Μεταξοτυπία</button>
+      </div>
+
+      <div class="quantity-row" aria-label="Ποσότητα">
+        <label for="quantityInput" class="quantity-label">Ποσότητα:</label>
+        <div class="quantity-controls">
+          <input id="quantityInput" type="number" inputmode="numeric" min="1" step="1" value="1" aria-describedby="quantityHelp" />
+        </div>
+      </div>
+
+      <div class="price-row">
+        <div class="price-wrap">
+          <span class="price-label">Price:</span>
+          <span id="priceText"> </span>
+          <span class="price-currency">€</span>
+        </div>
+
+        <button id="addToCartBtn" class="add-to-cart" type="button">Προσθήκη στο καλάθι</button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- styled toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+    <span id="toastMessage">Προστέθηκε επιτυχώς στο καλάθι</span>
+  </div>
+
+  <script src="../../js/images_data.js"></script>
+  <script src="../../js/script_image_preview.js" defer></script>
+</body>
+</html>
